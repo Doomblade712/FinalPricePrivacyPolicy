@@ -1,14 +1,12 @@
----
+# Privacy Policy — FinalPrice
 
-# Privacy Policy — Price Tax Calculator
-
-**Last updated: April 16, 2026**
+**Last updated: July 2, 2026**
 
 ---
 
 ## Overview
 
-Price Tax Calculator is a Chrome browser extension that detects prices on web pages and displays the tax-included total. This policy explains what data the extension accesses, how it is used, and what is never collected.
+FinalPrice is a Chrome browser extension that detects prices on web pages and displays the tax-included total. This policy explains what data the extension accesses, how it is used, and what is never collected.
 
 ---
 
@@ -37,19 +35,21 @@ This data is stored locally in your browser and synced across your signed-in Chr
 
 ## External Network Requests
 
-The extension makes two optional network requests to third-party services. Both are used solely to improve tax rate accuracy and currency conversion — no personal data is sent.
+The extension makes optional network requests to third-party services only when specific features are used. No personal data beyond what is described below is ever sent.
 
-### 1. IP Geolocation — `ipapi.co`
+### 1. IP Geolocation — `ipinfo.io`
 
-**When:** Only on first load if you have not manually set a tax rate or shipping state.
+**When:** In two situations:
+1. **Automatically, until a tax rate is set** — when the extension is first installed, and on page loads after that, it attempts one location lookup so it can apply a sensible default tax rate. These automatic attempts stop permanently as soon as a rate is determined or you set one yourself (a manual tax rate or a shipping state).
+2. **Manually** — whenever you click "Detect my location" in the extension popup.
 
 **Why:** To auto-detect your approximate US state so the correct default tax rate can be applied.
 
 **What is sent:** Your IP address (sent automatically by your browser as part of any web request).
 
-**What is received:** Your approximate region/state. No data is stored on our servers — the result is used immediately and saved locally on your device.
+**What is received:** Your approximate region/state. The result is used immediately and saved locally on your device. We do not store it on any server.
 
-**Privacy policy for ipapi.co:** https://ipapi.co/privacy/
+**Privacy policy for ipinfo.io:** https://ipinfo.io/privacy-policy
 
 ### 2. Currency Exchange Rates — `exchangerate-api.com`
 
@@ -71,8 +71,8 @@ The extension makes two optional network requests to third-party services. Both 
 |---|---|
 | `storage` | Save your settings locally |
 | `activeTab` | Read prices on the page you are currently viewing |
-| `https://ipapi.co/*` | Auto-detect your state for tax rate (optional, see above) |
-| `https://api.exchangerate-api.com/*` | Fetch live currency exchange rates (optional, see above) |
+| `https://ipinfo.io/*` | Auto-detect your state for the default tax rate (at install / until a rate is set, or when you click "Detect my location") |
+| `https://api.exchangerate-api.com/*` | Fetch live currency exchange rates (only when currency conversion is enabled) |
 
 ---
 
