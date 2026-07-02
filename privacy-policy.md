@@ -1,0 +1,96 @@
+# Privacy Policy — FinalPrice
+
+**Last updated: July 2, 2026**
+
+---
+
+## Overview
+
+FinalPrice is a Chrome browser extension that detects prices on web pages and displays the tax-included total. This policy explains what data the extension accesses, how it is used, and what is never collected.
+
+---
+
+## Data We Do NOT Collect
+
+- We do **not** collect, transmit, store, or sell any personal information.
+- We do **not** track which websites you visit.
+- We do **not** record which prices you view or interact with.
+- We do **not** use analytics, advertising, or third-party tracking of any kind.
+
+---
+
+## Data Stored Locally on Your Device
+
+Your extension settings are saved using Chrome's built-in `chrome.storage.sync` API. This stores only your preferences, such as:
+
+- Whether the extension is enabled
+- Your chosen display mode (replace / minimal)
+- Your selected shipping state for tax rate calculation
+- Any per-site tax rate overrides you have saved
+- Your preferred currency for conversion
+
+This data is stored locally in your browser and synced across your signed-in Chrome devices by Google's existing sync infrastructure. **We never see, access, or receive this data.**
+
+---
+
+## External Network Requests
+
+The extension makes optional network requests to third-party services only when specific features are used. No personal data beyond what is described below is ever sent.
+
+### 1. IP Geolocation — `ipinfo.io`
+
+**When:** In two situations:
+1. **Automatically, until a tax rate is set** — when the extension is first installed, and on page loads after that, it attempts one location lookup so it can apply a sensible default tax rate. These automatic attempts stop permanently as soon as a rate is determined or you set one yourself (a manual tax rate or a shipping state).
+2. **Manually** — whenever you click "Detect my location" in the extension popup.
+
+**Why:** To auto-detect your approximate US state so the correct default tax rate can be applied.
+
+**What is sent:** Your IP address (sent automatically by your browser as part of any web request).
+
+**What is received:** Your approximate region/state. The result is used immediately and saved locally on your device. We do not store it on any server.
+
+**Privacy policy for ipinfo.io:** https://ipinfo.io/privacy-policy
+
+### 2. Currency Exchange Rates — `exchangerate-api.com`
+
+**When:** Only if you enable the Currency Conversion feature.
+
+**Why:** To fetch up-to-date exchange rates so prices can be displayed in your chosen currency.
+
+**What is sent:** Nothing. This is a public rate feed — no personal data is included in the request.
+
+**What is received:** A list of current exchange rates. Rates are cached locally for 1 hour to minimize requests.
+
+**Privacy policy for exchangerate-api.com:** https://www.exchangerate-api.com/privacy
+
+---
+
+## Permissions Explained
+
+| Permission | Why it is needed |
+|---|---|
+| `storage` | Save your settings locally |
+| `activeTab` | Read prices on the page you are currently viewing |
+| `https://ipinfo.io/*` | Auto-detect your state for the default tax rate (at install / until a rate is set, or when you click "Detect my location") |
+| `https://api.exchangerate-api.com/*` | Fetch live currency exchange rates (only when currency conversion is enabled) |
+
+---
+
+## Children's Privacy
+
+This extension is not directed at children under 13 and does not knowingly collect any information from children.
+
+---
+
+## Changes to This Policy
+
+If this policy changes, the updated version will be posted at this URL with a new "Last updated" date. Continued use of the extension after any changes constitutes acceptance of the updated policy.
+
+---
+
+## Contact
+
+If you have any questions about this privacy policy, please open an issue on the GitHub repository or contact:
+
+**Email:** mtd.danab@gmail.com
+**GitHub:** https://github.com/Doomblade712/SalesTaxCalculatorPrivacyPolicy/blob/main/privacy-policy
